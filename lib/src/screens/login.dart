@@ -17,19 +17,21 @@ class LoginScreen extends ConsumerWidget {
       body: Column(
         children: [
           TextField(
+            keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
               hintText: 'Username',
             ),
             onChanged: loginStateNotifier.changeUsername,
           ),
           TextField(
+            obscureText: true,
             decoration: const InputDecoration(
               hintText: 'Password',
             ),
             onChanged: loginStateNotifier.changePassword,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: loginStateNotifier.submit,
             child: const Text('Login'),
           )
         ],

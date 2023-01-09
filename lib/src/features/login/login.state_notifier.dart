@@ -6,6 +6,9 @@ class LoginStateNotifier extends StateNotifier<LoginModel> {
 
   void changeUsername(String username) => state.username = username;
   void changePassword(String password) => state.password = password;
+  void submit() {
+    print('${state.username} ${state.password}');
+  }
 }
 
 final StateNotifierProvider<LoginStateNotifier, LoginModel> loginProvider =
